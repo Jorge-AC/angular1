@@ -3,13 +3,25 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Angular Test 1</title>
+	<title>Angular1 TimeZone</title>
 	<link rel="stylesheet" href="stylesheets/custom.css"> </link>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+	<script src="js/script.js"></script>
 </head>
 
-<body>
+<body ng-app="timezoneFinderApp">
+	<h1>Hello World this is my first Angular Test</h1>
+
+	<div ng-controller="MainController">
+		<label>Select a city</label>
+		<select ng-model="selectedCity" ng-options="city.name for city in cities"></select>
+		<p>Timezone in {{ selectedCity.name }} is {{ selectedCity.timezone }}</p>
+	</div>
+	
+	
+
 </body>
 
-<script src="js/script.js"></script>
+
 
 </html>
