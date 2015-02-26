@@ -2,9 +2,9 @@
 
 var app = angular.module('timezoneFinderApp', ['ngRoute']);
 
+
 app.config(['$routeProvider', function($routeProvider) { 
 
-	
 	$routeProvider.
     when('/welcome', {
       templateUrl: 'welcome.html',
@@ -18,6 +18,17 @@ app.config(['$routeProvider', function($routeProvider) {
       redirectTo: '/welcome'
 	}); 
 }]);
+
+
+app.directive('cityTimezone', function() { 
+  return {
+    scope: {
+      city: '=city'
+	},
+    template: 'The timezone in {{city.name}} is {{city.timezone}}.',
+  };
+});
+
 
 app.controller('MainController', [ '$scope', function($scope){
 		// Defines our cities.

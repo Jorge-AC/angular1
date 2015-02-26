@@ -1,9 +1,10 @@
 <h1>Full List</h1> 
 
-<ul>
+<div ng-controller="MainController">
+	<ul>
+		<li ng-repeat="city in cities" city-timezone city="city">
+		</li> 	
+	</ul>
+</div>
 
-	<li ng-repeat="city in cities">
-	The timezone in {{city.name}} is {{city.timezone}}.
-	</li> 
 	
-</ul>
